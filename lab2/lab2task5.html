@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            opacity: 0.5;
+        }
+        .container{
+            width: 50%;
+            margin: auto;
+            background-color: orangered;
+            border-radius: 5px;
+            height: 1300px;
+        }
+        h1{text-align: center; }
+        
+        .background{
+            
+            display: inline-block;
+            margin: 5px 50px;
+            border-radius: 3px;
+            padding: 20px;
+            width: 500px;
+            
+            
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: wheat;
+            
+        }
+        
+        label{
+            margin-right: 200px;
+            font-size: 20px;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+     button{
+            display: block;
+            margin-top: 20px;
+            margin-left: 250px;
+            padding: 15px 50px;
+            border-radius: 20px;
+            background-color: rgb(179, 48, 0);
+            color: white;
+            font-weight: bold;
+            font-size: large;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Payment form</h1>
+    <div class="container">
+        <form action="#">
+            <h2>step 1: Your Details</h2>
+
+            <div class="background">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+
+            <div class="background">
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="background">
+
+                <label for="phone">Phone</label>
+                <input type="phone" name="phone" id="phone">
+            </div>
+
+            <h2>step 2: Delivery Address</h2>
+
+            <div class="background">
+
+                <label for="address">Address</label><br><br>
+                <textarea name="address" id="address" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="background">
+
+                <label for="postcode">Post Code</label><br><br>
+                <input type="number" name="postcode" id="postcode">
+            </div>
+            <div class="background">
+
+                <label for="country">Country</label>
+                <input type="text" name="country" id="country">
+            </div>
+
+            <h2>step 3: Card Details</h2>
+
+            <div class="background">
+
+                <label for="cardtype">cardtype</label><br><br>
+                <input type="radio" name="cardtype">VISA
+                <input type="radio" name="cardtype">Debit
+                <input type="radio" name="cardtype">Mastercard
+            </div>
+
+            <div class="background">
+
+                <label for="cardnumber">Card Number</label>
+                <input type="number" name="cardnumber" id="cardnumber">
+            </div>
+            <div class="background">
+
+                <label for="securitycode">Security Code</label>
+                <input type="number" name="securitycode" id="securitycode">
+            </div>
+            <div class="background">
+
+                <label for="nameoncard">Name on Card</label>
+                <input type="text" name="nameoncard" id="nameoncard">
+            </div>
+            
+
+            <button>BUY IT!</button>
+        </form>
+    </div>
+</body>
+</html>

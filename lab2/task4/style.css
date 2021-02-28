@@ -1,0 +1,44 @@
+.container{
+    background-color: gray;
+    height: 100vh;
+}
+.sidebar{
+    display: inline;
+    float: left;
+    margin-right: 40px;
+    height: 500px;
+}
+h1{
+    text-align: center;
+}
+
+li{
+    list-style: none;
+    margin: 10px 0px;
+    background-color: white;
+    padding: 10px 20px;
+    
+}
+a{
+    text-decoration: none;
+    color: brown;    
+}
+.yellow{
+    color: yellow;
+    text-shadow: 1px 1px black;
+}
+section{
+    display: inline;
+}
+nav{
+    background-color: green;
+    width: 20px;
+}
+img{
+
+    flex-direction: row;
+    height: 100px;
+    padding: 50px;
+    border: 2px solid white;
+    margin: 10px;
+}
