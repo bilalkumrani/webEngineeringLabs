@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task5</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        let val = prompt();
+
+        let myfun = (speed) => {
+            if (speed <= 70) {
+                console.log("Good safe driving");
+            }
+            else if (speed > 70 && speed < 120) {
+                console.log('Speed Limit Crossed by Penalty Point');
+            }
+            else if(speed>120){
+                console.log("liscense Suspended");
+            }
+        }
+
+        myfun(val);
+    </script>
+</body>
+
+</html>

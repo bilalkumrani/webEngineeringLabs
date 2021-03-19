@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+    </div>
+    <section id="container">
+        <ul>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ul>
+        <ol>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ol>
+    </section>
+    <div class="footer">
+    </div>
+
+    <script>
+    // task 1
+    document.getElementById("container");
+
+    // task 2
+    document.querySelector("#container");
+
+    // task 3
+    document.getElementsByClassName("second");
+    
+    // task 4 
+    let obj1 =  document.querySelector('ol > .third');
+    
+    // task 5
+   // document.getElementById("container").innerText = "Hello";
+
+   // task 6
+  document.getElementsByClassName("footer")[0].classList.add('main');
+
+  // task 7
+  document.getElementsByClassName("footer")[0].classList.remove('main');
+
+  // task 8
+let li = document.createElement('li');
+li.innerText = "four";
+
+let ul = document.querySelector('li');
+ul.appendChild(li);
+  
+
+
+// how to select item in dropdown menu in javascript
+// check checkbox in javascript
+
+
+    </script>
+</body>
+</html>
