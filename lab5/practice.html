@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        .container{
+            width: 20%;
+            margin: auto;
+        }
+        .todolist{
+            width: 20%;
+            margin: auto;
+            cursor: pointer;
+
+        }
+    </style>
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <div class="container">
+        <h1>This is todo list</h1>
+        <input type="text" name="" id="todo">
+        <button id="addToTodo">+</button>
+    </div>
+    <div class="todolist" id="todolist">
+
+    </div>
+    
+
+    <script>
+
+        let btn = document.getElementById('addToTodo');
+        let inp = document.getElementById('todo');
+        let list = document.getElementById('todolist');
+
+
+        btn.addEventListener('click',()=>{
+            let key = localStorage.length+1;
+            let value = inp.value;
+            if(key && value){
+
+                window.localStorage.setItem(key,value);       
+            }
+            inp.value = "";
+            location.reload();
+        })
+        list.addEventListener('click',(e)=>{
+            
+            
+            e.target.remove();
+        })
+
+
+        for(let i=0; i<localStorage.length; i++){
+            const key = localStorage.key(i);
+            const value = localStorage.getItem(key);
+            let ele = document.createElement('h3');
+            ele.innerText = `${key}: ${value}`
+            list.append(ele);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Exercise</title>
+</head>
+<body>
+    <div id="container">
+        <h1 id="welcome"></h1>
+        <div class="list-container">
+            <ul class="nav">
+                <li class="nav-item">Home</li>
+                <li class="nav-item">About Us</li>
+                <li class="nav-item">Contact</li>
+                <li class="nav-item">Careers</li>
+                <li class="nav-item">Apply</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-nav">
+                <li class="footer-nav-item">Learn More</li>
+                <li class="footer-nav-item">Blog</li>
+                <li class="footer-nav-item">Email Us</li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(()=>{
+        let ft = $('footer');
+        let con = $('#container');
+        let lis = $(".nav");
+
+        let thirdli = $('.list-container ul li:eq(2)'); //getting third li having list-cintainer class
+        let last1 = $('ul li:last-child'); // got last child of all ul's
+        
+
+        
+            console.log(last1.text());  // all last lis
+            console.log(lis.text()); // all lis inside nav class
+
+            
+
+        })
+
+    </script>
+</body>
+</html>

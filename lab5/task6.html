@@ -22,6 +22,7 @@
         </ol>
     </section>
     <div class="footer">
+        <h1>hi</h1>
     </div>
 
     <script>
@@ -38,7 +39,7 @@
     let obj1 =  document.querySelector('ol > .third');
     
     // task 5
-   // document.getElementById("container").innerText = "Hello";
+   //  document.getElementById("container").innerText = "Hello";
 
    // task 6
   document.getElementsByClassName("footer")[0].classList.add('main');
@@ -48,11 +49,19 @@
 
   // task 8
 let li = document.createElement('li');
-li.innerText = "four";
-
+ // task 9
+    li.innerText = "four";
+ // task 10
 let ul = document.querySelector('li');
-ul.appendChild(li);
-  
+ul.append(li);
+
+// task 11
+for(li of document.getElementsByTagName('ol')){
+    li.style.backgroundColor = "green";
+}
+
+// task12
+document.getElementsByClassName("footer")[0].remove();
 
 
 // how to select item in dropdown menu in javascript

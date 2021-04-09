@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <ul class="list" id="list">
+        <li>OOP</li>
+        <li>web</li>
+        <li>english</li>
+    </ul>
+    
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        // jquery is javascript liberary
+        
+        //we are starting Jquery we can use CDN or download files and import them
+        
+        // document.addEventListener('DOMContentLoaded',()=>{
+
+        //     alert("hello bro");
+        // })
+
+
+        //it will run when dom is loaded
+
+        jQuery(()=>{
+            //alert("Hellooo");
+        })
+
+
+        //here we are targeting document we are saying when dom is ready call it.. it is another alternative of above
+
+
+        $(document).ready(()=>{
+            //alert('this is other alternative');
+
+            let ul = $('#list');  //accessing ul using jQuery we will use # for id and . for class
+            // console.log(ul); 
+            
+            // ul.text()
+            // ul.html()
+
+            ul.children()[0].innerText='wawaw'; //accessing one child and changed it
+            //we access its all child by using this children() [0] shows its first child.
+
+            // append() and appendTo()   
+            // target.append(data)  this is used for append data into target node
+            // data.appendTo(target) this is inverse of above
+
+
+            // ul.addClass('myClass')  this will add class to a element
+            // ul.removeClass('myClass')  this will remove class from a element
+
+            // ul.toggleClass('myClass') if already myClass is added it will remove if not it will add it
+
+            ul.css('background-color','red'); // it will change background color similarly we can add any other attributes like style
+
+            ul.attr('style','border:3px solid yellow'); // this is like inline css
+            ul.css('background-color','green');
+            ul.css('font-size','50px');
+            // we can also create our own attributes
+
+
+            $('#list').each(()=>{
+            $(this).css('background-color','blue');
+
+        })// this is not working dont know why bad me dekhty
+
+
+
+
+        });
+
+        
+        
+
+
+        
+    </script>
+</body>
+</html>
