@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>part 2</title>
+</head>
+<body>
+
+
+    <script>
+        //closure
+        //A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).
+
+        // parent ki khtm hojai or usky andar wala function abhi khud nahi chala hai magar 
+        // child will preserve its parents properties
+
+        // there are three scope local global and closure
+
+
+        function printme(n){
+            console.log(n);
+        }
+
+        function createCounter(num){
+            let no = num; // child funtion will preserve this when parent is called this is closure property
+            return function increment(){
+                return no++;
+            }
+        }
+
+
+        let newVal = createCounter(6);
+        
+        // arguments is array like object it is not array
+
+         function arr(){
+            for( let i in arguments){
+                console.log(arguments[i]);
+            }           
+        }
+
+        //arr(2,3,4,5,6,7,8,9,1);
+
+        function abc(){
+            for( let i of arguments){
+                console.log(i);
+            }           
+        }
+
+        abc('bial','bakhtiar','haseeb','ayman','javeria','nouman','malook');
+
+
+        // we can use both for of and for in for objects there is some difference in their way of working
+
+
+        // Arguments in ES6
+
+        // local storage
+        // capacity 10mb
+
+        // webstorage is used to store data into the web browser it is like big object which contains strings
+
+        // in session storage when uset close the tab the data will be lost larger storage than cookies
+        
+        // local storage is same is the session storage but it is more persistent even user close the browser data will be there untill we dont clear it.
+        // you can keep the data stored for that user in his browser til as long as you want.
+        
+        // when data is not too relavent to send to the server we just dump it to the local storage on client side.
+        // it makes system efficent getting the data from the local storage is very easy as compare to making a network call and get from there.
+
+        localStorage.setItem('name','bilal');
+        console.log("following is stored in the local storage");
+        console.log(localStorage.getItem('name')); // this is used to get item by giving its key
+        // when try get thing here it will give you null.
+
+        localStorage.clear(); // it will clear the local storage
+       // localStorage.clear('name'); // it will rmove this specific key and value
+       // we can't add arrays here it is the limitation but we going to see how to takle it
+
+       let narr = ['Alu','tamatar','qadu','bhindi'];
+       localStorage.setItem('sabzi',narr); // it will be saved combined and at access time it will return combined string.
+        
+       // to handle this situation we will use JSON.stringify(), it will save it as array in local storage, but actually it is string, so again we want to make it array so we will use jSON.parse() to convert it to the array.
+       
+;
+
+
+// cookies and local storage is available in any window opened in browser, while session storage 
+// is only available in the single tab you have opened it will be rmoved as soon as user closes the tab.
+
+// local storage and browser storage in the browser while the cookies they saved in the browser but they sent to the server everytime user request something to the server, all the information in the cookies is sent to the server. so thats why cookies should be small in size otherwise it will slow down the system.
+
+
+
+
+
+        // session storage
+
+        // capacity 5mb
+        sessionStorage.setItem('name','bilal');
+        sessionStorage.setItem('name1','nomi');
+        sessionStorage.setItem('name2','bakhtiar');
+       
+       // sessionStorage.removeItem('name2');
+        sessionStorage.clear(); // to clear the valuse
+
+
+
+
+        // cookies
+        // capacity 4kb
+        document.cookie = 'name=malook; expires='+ new Date(2021,4,13).toUTCString();
+
+        document.cookie = 'lastname=mahar; expires='+ new Date(2021,4,13).toUTCString();
+
+        console.log(document.cookie); // there is no easy to parse cookies
+
+        //Json, 
+        // javascript object notation - it has no special relation with javascript its format is like javascript object thats why it is called javascript object notation.
+//format
+        // used to store and exchange data, other data ecchange format is XML but JSON is more popular
+        // eg: {"students":[{"name":"Bilal","age":"21","city":"sukkur"},
+       //                   {"name":"Nouman","age":"21","city":"sukkur"}] }
+       // it doesnt support comments and namespaces
+      //  in JSON, keys must be in double qoutes but in javascript object single qoutes are also fine
+
+      // data types allowed in JSON:
+      // string 
+      // number
+      // boolean
+      // array
+      // object
+      // null
+
+      // its disadvantage is can not use it for transfer vido audio images or any other binary informantion.
+      // JSON is mainly used in API
+
+      //API
+      // (application program interface)
+        
+        
+        // stringfy()
+        // it will convert js object into JSON
+        // parse()
+        // it will convert JSON obj into js obj
+
+
+
+        // map(itm, index, arr)
+        // it is method of an array it work like loops, eg:
+        let ourArr = [10,2,3,5,3,4]; // i want every val of array multiplyed with 10 and i want 
+        // a new array in result.
+
+        var b = ourArr.map((x)=>{
+            return x*10;
+        })
+
+        console.log('following are the values multiplied with 10:  '+b);
+
+        // this is the array of objects
+        let objArr = [
+            {fname:"bilal", lname: "khan"},
+            {fname:"nouman", lname: "ali"},
+            {fname:"bakhtiar", lname: "hussain"},
+            {fname:"Mohammad", lname: "Malook"}  
+    ]// i want to create a new array caontaining only values of these objects
+         let objVal =   objArr.map((x)=>{
+                return x.fname+" " + x.lname;
+            });
+
+            console.log("this objects holds the all values of the array of object:  "+ objVal);
+        
+
+
+
+        // filter()
+            // it used when we want to search in array on the basis of some conditions
+            // eg: i want it should give all the values val>=18 in array and create new array of these values
+            
+            let ages = [10,23,9,20];
+           let newvals = ages.filter((age)=>{
+                return age>=18;
+            })
+
+            // now this array has all the values greater or equal to 18
+            console.log("the adults are: "+newvals);
+
+
+
+        // reduce()
+        // the reduce method executes a reducer function that you provide... on each element of the array the reducer function takes four arguments: 1) accumulator 2) current value 3) current index 4) source array
+
+
+        let toBeRed = [1,2,3,4,5,6]; // it is used we want eg: sum, average, product, etc
+        let sum = toBeRed.reduce((accum, curr)=>{
+            return accum+curr;
+        });
+        
+console.log('sum with the reduce function: '+ sum);
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .achiClass{
+            background-color: green;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Hi i'm here again :)</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, exercitationem neque cupiditate dolore officia nostrum eos itaque, ut, incidunt commodi repellat impedit!</p>
+
+    <ul>
+        <li><a href="www.google.com">urdu</a></li>
+        <li>english</li>
+        <li>arabic</li>
+        <li>french</li>
+    </ul>
+
+
+
+    <input type="text" name="sometext" id="sometext">
+    <button style="color: red;">submit</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+
+    <script>
+
+        let obj ={
+            name: "bilal",
+            cms: "023-18-0042" 
+        }
+
+    console.log($('h1'));
+    console.log($('ul li a'));
+
+    $('h1').css('color','yellow');
+
+    $('ul').before('<h2>this is added with before method</h2>');
+    $('ul').after(obj['name']+"<br>");
+
+        
+    for(let i=0; i<=3; i++){
+
+        console.log($(`li:eq(${i})`).text());
+    }
+
+
+
+
+    let design = {
+
+    color : "green",
+    background : "red",
+    border : "5px solid purple",
+    borderRadius: "50px"
+}
+
+$('h1').css(design);
+
+
+
+
+$(document).ready(function(){ // it detects the state of readiness
+
+$('button').click(function(){
+
+alert("The text is: "+ $('#sometext').val());
+})
+})
+
+
+$('li').click(function(){
+            $(this).toggleClass('achiClass'); // it will hide the selected li.
+        });
+
+
+
+
+        $('h1').on({click: function(e) {
+        
+            
+            console.log('item anchor clicked');
+
+            
+
+            
+
+  },    
+  mouseenter: function(e) {
+    console.log('enter!');
+  }
+});
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

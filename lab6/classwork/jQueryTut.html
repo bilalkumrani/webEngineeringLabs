@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>jQuery here</title>
+
+</head>
+<body>
+
+    <h1>Hi i'm here again :)</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, exercitationem neque cupiditate dolore officia nostrum eos itaque, ut, incidunt commodi repellat impedit!</p>
+
+    <ul>
+        <li><a href="www.google.com">urdu</a></li>
+        <li>english</li>
+        <li>arabic</li>
+        <li>french</li>
+    </ul>
+
+
+
+    <input type="text" name="sometext" id="sometext">
+    <button style="color: red;">submit</button>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // jQuery selectors
+        // jQuery selectors allow you to select and manipulate html elements
+        // syntax : $('selector').action()
+
+        // $ - select and access a query.
+        // selector - denotes the html element that needs to be manipulated.
+        // action - denote jQuery action to be performed on the html element. 
+
+
+
+
+        // $('h1') - it will select h1 tag
+
+        // $('ul li a') // specifying that inside ul is li and inside li is a tag.
+
+        // jQuery method
+
+        // $('h1').css('color','yellow') - it will change the color of h1
+
+        // before(content); - before method inserts the specified content before the selected item.
+        // content: specifies the content to insert. possible values are html elements, objects and DOM elements.
+
+        $('ul').before('<h2>this is added with before method</h2>');
+
+        // $('selector').after(content); - it will add content after the selected element.
+
+        $('ul').after('<h2>this is added with after method</h2>');
+
+        // $('selector').text() - is used to set or return the text content of the selected item.
+        // $('selector').text(content)
+        // return content: it returns the combined text content of all matched elements without html
+        // set content: it overwrites the contents of all matched elements
+
+        $('li').text(); // it will return combined text of all lis
+
+        // $('li').text('same text will be of all lis');
+
+        $('ul li:first').text() // it will return first element of the list
+
+
+        //- $('selector').html() -  it is very similar to the text it will return the html or overwrite
+        // it will set and return html content as well
+
+
+        // css method set or return one or more style properties for the selected elements
+        // $('selector').css(propertyname);
+        // $('selector').css(propertyname, value);
+
+
+
+        let design = {
+
+            color : "green",
+            background : "red",
+            border : "5px solid purple",
+            borderRadius: "50px"
+        }
+
+        $('h1').css(design);
+
+
+        // attr() - is used to set or return attributes values of the selected items.
+
+        // $('selector').attr(attribute)
+        // $('selector').attr(attribute, value)
+
+        
+
+
+
+
+        // $('selector').val() - used to set or retrun the values of the selected items
+
+
+
+        // events
+
+        // $('selector').click(function) - click is executed when the user clicks the html element.
+        // after the click event occurs it execute the click(fuction).
+
+
+
+        $(document).ready(function(){ // it detects the state of readiness
+
+        })
+
+        $('button').click(function(){
+
+            alert("The text is: "+ $('#sometext').val());
+        })
+        
+
+
+        // addClass() - adds one or more class to the selected item.
+        // $('selector').addClass('classname') - specify one or more class name which you want to add.
+
+        // $('selector').removeClass('classname')
+
+        // $('selector').toggleClass('classname')
+
+
+        
+        $('li').click(function(){
+            $(this).hide(); // it will hide the selected li.
+        });
+
+
+
+        //jQuery event - on() - attaches one or more event handelers for the selected elements
+        // $('selector').on(event, function)
+
+        // on() - binds an event handler to dynamically added elements
+
+        // off() - similarly removes an event handlers that were attached with on().
+
+        //keypress()
+
+
+
+
+
+    </script>
+</body>
+</html>
