@@ -87,7 +87,7 @@
 
 
 
-//above both functions call also return id when we want to stop them we will call clearInterval( id ; 
+//above both functions call also return id when we want to stop them we will call clearInterval( id ); 
 // it will take id as argument
 
 

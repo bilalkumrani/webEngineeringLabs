@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+    <style>
+
+        h1{
+            padding: 60px;
+        }
+    </style>
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-2 border text-center"><h1 onclick="clk(this)" id="id-1"></h1></div>
+            <div class="col-md-2 border text-center"><h1 onclick="clk(this)" id="id-2"></h1></div>
+            <div class="col-md-2 border text-center"><h1 onclick="clk(this)" id="id-3"></h1></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 border text-center"><h1 onclick="clk(this)" id="id-4"></h1></div>
+            <div class="col-md-2 border text-center"><h1 onclick="clk(this)" id="id-5"></h1></div>
+            <div class="col-md-2 border text-center"><h1 onclick="clk(this)" id="id-6"></h1></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 border text-center"><h1 onclick="clk(this)" id="id-7"></h1></div>
+            <div class="col-md-2 border text-center"><h1 onclick="clk(this)" id="id-8"></h1></div>
+            <div class="col-md-2 border text-center"><h1 onclick="clk(this)" id="id-9"></h1></div>
+        </div>
+    </div>
+
+
+
+    <script>
+        let flag = true;
+
+        function clk(e){
+            if(flag){
+                e.innerText = 'O';
+                flag = false;
+            }
+            else{
+                e.innerText = 'X';
+                flag = true;
+            }
+            checkForWin();
+        }
+
+
+        function checkForWin(){
+
+            for(let i=1; i<=9; i++){
+                
+            }
+
+        }
+    </script>
+</body>
+</html>

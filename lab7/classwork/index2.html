@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
+    <script>
+
+        // what is callback function
+        // Any function that is passed as an argument is called a callback function.
+        // A callback is a function that is to be executed after another function has finished executing - hence the name callback
+
+        //javascript is an event driven language. This means instead of waiting for a response before moving on, javascript will keep executing while listening for other events.
+        // callbacks are a way to make sure certain code doesnt execute until other code has already finished execution.
+
+        const person1 = (friend, callfriend)=>{
+            console.log(`I am bussy rightnow im talking to ${friend}. I will call you back.`);
+            callfriend();
+        }
+
+
+
+        const person2 = ()=>{
+            console.log(" hey i called you back");
+        }
+
+        person1('nomi',person2);
+
+
+        // event handler
+        // these are event listners used to know what the user is doing, when a button is clicked we want to run a function that function is the event handler
+        
+        
+
+
+
+
+    // $(css selector).action()..  we can't make complicated selectors with css selectors so to solve this problem jQuery team has created following categories of methods by using them we can easily get any element of the DOM.
+
+    $('p').closest('div');
+
+// three categories of methods
+// - Ancestors methods
+//       can target parent, grandparent, great-grandparent
+//          - parent() -> it will give imediate parent of targeted element
+//          - parents(can specify name of parent here) -> it will give all parents of the targated element
+//          - $(is element se leker).parentsUntil(is parent tk target karo) -> jb limit lagani ho k             kaha tk k parents chahiye
+//          - closest(this element) -> jo isko parent me se closest ye element milega jo parameter me             bheja hai wo select krdega
+//          - offsetParent() -> it will target that parent jispy css ki position property applied hogi
+
+// - Descendants methods
+//      can target child, grand-child, great-grandchild and lower
+//      - children() -> it will target elements imediate children it will not target grand childrend.
+//          children('can specify child here')
+//      - find('.className') -> it will find in children, greatgrand children and lower.
+// - Siblings methods
+//      always parent is same
+//      - siblings('can specify sibling here') -> it will target siblings
+//      - next() -> it will target next sibling
+//      - nextAll() -> it will target next all siblings
+//      - nextUntil('.classname or #id etc') -> ye next siblings me se check karega jisko ye id ya class     mili hogi waha tak beech me jitny b siblings arhy hen sabko target karega
+//      - prev() -> it will target previous sibling element of targeted element
+//      - prevAll() -> it will target all previous sibling elements
+//      - prevUntil('.classname or #id etc') -> ye previous siblings me se check karega jisko ye id ya class mili hogi waha tak beech me jitny b siblings arhy hen sabko target karega
+// - Filtering methods
+
+
+
+
+        $('span.subchild').parent();
+
+        // difference bw parent() and parents()
+        // parentsUntil()
+        // closest()
+        // children()
+        // contents()
+        // prev()
+        // next()
+        // nextAll()
+        // prevAll()
+        // nextAll().first()
+        // preAll().last()
+        // siblings()
+        // find()
+        
+    </script>
+</body>
+</html>

@@ -36,7 +36,7 @@ arr[0] = "yaha per empt jaga thi";
 console.log(arr);
 
 
-// I have to learn all variables loops and switches at my own
+// I have to study all variables loops and switches at my own
 
 
 for (let i of arr){

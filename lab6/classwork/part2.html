@@ -30,6 +30,8 @@
             }
         }
 
+        
+
 
         let newVal = createCounter(6);
         
@@ -41,7 +43,7 @@
             }           
         }
 
-        //arr(2,3,4,5,6,7,8,9,1);
+       // arr(2,3,4,5,6,7,8,9,1);
 
         function abc(){
             for( let i of arguments){
@@ -62,12 +64,13 @@
 
         // webstorage is used to store data into the web browser it is like big object which contains strings
 
-        // in session storage when uset close the tab the data will be lost larger storage than cookies
+        // In session storage when user close the tab the data will be lost  -- larger storage than cookies
         
-        // local storage is same is the session storage but it is more persistent even user close the browser data will be there untill we dont clear it.
+        // local storage is same is the session storage but it is more persistent even user close the browser data will be there untill we don't clear it.
         // you can keep the data stored for that user in his browser til as long as you want.
         
         // when data is not too relavent to send to the server we just dump it to the local storage on client side.
+        
         // it makes system efficent getting the data from the local storage is very easy as compare to making a network call and get from there.
 
         localStorage.setItem('name','bilal');
@@ -111,16 +114,17 @@
 
         // cookies
         // capacity 4kb
-        document.cookie = 'name=malook; expires='+ new Date(2021,4,13).toUTCString();
+        document.cookie = 'name=malook; expires='+ new Date(2021,4,21).toUTCString();
 
         document.cookie = 'lastname=mahar; expires='+ new Date(2021,4,13).toUTCString();
 
-        console.log(document.cookie); // there is no easy to parse cookies
+        console.log(document.cookie); // there is no easy way to parse cookies
 
-        //Json, 
+        //Json,
         // javascript object notation - it has no special relation with javascript its format is like javascript object thats why it is called javascript object notation.
-//format
+        //format
         // used to store and exchange data, other data ecchange format is XML but JSON is more popular
+        
         // eg: {"students":[{"name":"Bilal","age":"21","city":"sukkur"},
        //                   {"name":"Nouman","age":"21","city":"sukkur"}] }
        // it doesnt support comments and namespaces
@@ -139,6 +143,7 @@
 
       //API
       // (application program interface)
+
         
         
         // stringfy()
@@ -146,16 +151,28 @@
         // parse()
         // it will convert JSON obj into js obj
 
+//example: let obj = {name:'bilal', cms: '023-18-0042'}
+
+// let jsonobj = JSON.stringify(obj);
+
+// console.log(jsonobj);
+
+// let jsobj = JSON.parse(jsonobj);
+// console.log(jsobj);
+
 
 
         // map(itm, index, arr)
         // it is method of an array it work like loops, eg:
         let ourArr = [10,2,3,5,3,4]; // i want every val of array multiplyed with 10 and i want 
         // a new array in result.
-
+    
         var b = ourArr.map((x)=>{
+            
             return x*10;
-        })
+        });
+
+
 
         console.log('following are the values multiplied with 10:  '+b);
 
@@ -165,7 +182,9 @@
             {fname:"nouman", lname: "ali"},
             {fname:"bakhtiar", lname: "hussain"},
             {fname:"Mohammad", lname: "Malook"}  
+
     ]// i want to create a new array caontaining only values of these objects
+
          let objVal =   objArr.map((x)=>{
                 return x.fname+" " + x.lname;
             });
@@ -177,10 +196,10 @@
 
         // filter()
             // it used when we want to search in array on the basis of some conditions
-            // eg: i want it should give all the values val>=18 in array and create new array of these values
+            // eg: i want it all the values val>=18 in array and create new array of these values
             
             let ages = [10,23,9,20];
-           let newvals = ages.filter((age)=>{
+            let newvals = ages.filter((age)=>{
                 return age>=18;
             })
 
@@ -190,7 +209,7 @@
 
 
         // reduce()
-        // the reduce method executes a reducer function that you provide... on each element of the array the reducer function takes four arguments: 1) accumulator 2) current value 3) current index 4) source array
+        // the reduce method executes a reducer function that you provide... on each element of the array the reduce function takes four arguments: 1) accumulator 2) current value 3) current index 4) source array
 
 
         let toBeRed = [1,2,3,4,5,6]; // it is used we want eg: sum, average, product, etc
@@ -198,9 +217,35 @@
             return accum+curr;
         });
         
-console.log('sum with the reduce function: '+ sum);
+    console.log('sum with the reduce function: '+ sum);
 
 
+
+// find() and findIndex()
+
+// It is like filter but the difference is it only return the first value which sarisfies the condition.
+
+var newAges = [12,14,45,56,67];
+let singleval = newAges.find((age)=>{
+    return age >=18;
+}); 
+    console.log("single value is here: "+singleval);
+
+
+
+    // findIndex() is also like find() it will return the index of first value which satisfy the condition
+
+  let singleIndex = newAges.findIndex((age)=>{
+            return age>=18;
+    });
+ 
+ 
+ 
+ 
+ 
+    console.log("index of first passed vaule is: "+ singleIndex);
+
+    
 
     </script>
 </body>

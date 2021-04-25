@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>JS DOM paragraph style</title>
+</head>
+<body>
+<p id='text'>jQuery Exercise</p>
+<div>
+<button id="jsstyle" onclick="js_style()">Style</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
+<script>
+  
+    
+    function js_style(){
+        let design ={
+        color: 'red',
+        fontSize: '50px',
+        bakgroungColor:'hotpink',
+        fontFamily:'sans-serif'
+    }
+        $('#text').css(design);
+    }
+</script>
+</body>
+</html>

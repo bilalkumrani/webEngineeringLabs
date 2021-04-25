@@ -61,6 +61,8 @@
             //we access its all child by using this children() [0] shows its first child.
 
             // append() and appendTo()   
+            // $(content).appendTo(selector)
+            // $(selector).append(content)
             // target.append(data)  this is used for append data into target node
             // data.appendTo(target) this is inverse of above
 
@@ -78,7 +80,7 @@
             // we can also create our own attributes
 
 
-            $('#list').each(()=>{
+            $('#list').forEach(()=>{
             $(this).css('background-color','blue');
 
         })// this is not working dont know why bad me dekhty

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <!-- simple 2 tables banaingy first me todo items add krengy usky sath checkbox b add krengy -->
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 offset-3">
+                
+                    <div class="input-group mb-3 mt-3">
+
+                    <input class="form-control" type="text" name="" id="inp">
+                    <button onclick="add_item()" class="btn btn-primary" id="btn">Add</button>
+                    </div>
+                
+            </div>
+            <div class="col-md-6 offset-3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>task</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbdy">
+                        
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ye he dusri table yaha jese hi ooper wali table me check box pe click hoga waha se utha k item yaha add kr dengy -->
+
+        <div class="row mb-5 mt-5">
+            <div class="col-md-6 offset-3">
+                <h3>These are done</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>task</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbdy1">
+                        
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
+    <script>
+        
+        let btn = document.getElementById('btn');
+        let tbdy = document.getElementById('tbdy');
+        let arr=[]; // initially items ismy add hongy
+        let del=[]; // checkbox pe click hony k bad yaha add hongy
+
+        function display()
+        {
+            let row = '';
+            arr.forEach((val,index)=>{
+            row += `<tr id='id-${index}'><td>${index+1}</td>
+                    <td>${val}</td><td> <input class="form-check-input" type='checkbox' onclick='remove_item(${index})' >  </td></tr>`;
+                });
+
+            tbdy.innerHTML = row;
+        }
+//add waly buddon pe ye call hoga
+function add_item() {
+    
+            let val = document.getElementById('inp').value;
+            if(val){
+
+                arr.push(val);
+            }
+            localStorage.setItem('tasks',arr);
+            display();
+        
+}
+//checkbox pe click hoga to ye call hoga
+function remove_item(index) {
+    del.push(arr[index]); //jis index pe click hua hai wo item ek arry se utha kr dusry me bhej rahy
+    arr.splice(index,1); //ab wo item pehly array se delete krhy hen
+    
+    localStorage.setItem('task',arr);
+    localStorage.setItem('done',del);
+    
+    display(); //ye pehly waly table pe display krwaiga
+    display_new(); //ye dusry table k content ko display karwaiga
+   
+    
+}
+
+function display_new(){
+let row = '';
+del.forEach((item,index)=>{
+    row+=`<tr id="id-${index}"><td>${index+1}</td><td>${item}</td></tr>`;
+})
+document.getElementById('tbdy1').innerHTML = row;
+}
+
+$(document).ready(()=>{
+    arr = localStorage.getItem('tasks').split(',');
+    del = localStorage.getItem('done').split(',');
+    display();
+    display_new();
+})
+
+        
+    </script>
+    
+</body>
+</html>
