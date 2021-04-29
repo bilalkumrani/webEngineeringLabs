@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task3</title>
+</head>
+<body>
+
+    <span>Enter your name:</span>
+<input type="text" id="name">
+<button id="greet">Greet me!</button>
+
+
+
+
+<button id="clicker">Click me to hide the hidden secrets!</button>
+    <p class="secret">I am hidden secret #1.</p>
+    <p class="secret">I am hidden secret #2.</p>
+    <p class="secret">I am hidden secret #2.</p>
+    <p>I am <em>not</em> a hidden secret.</p>
+    
+    
+    
+<img src="http://hackasaurus.toolness.org/images/goggles/supergirl.png">
+<p>
+<button id="clicker2">Click me to change the picture</button>
+</p>
+    
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
+<script>
+
+$(document).ready(function(){
+    
+
+    $('#greet').click(function(){
+    let txt = $('input').val();
+    console.log(`Hello ${txt}`)
+    say(`Hello ${txt}`);
+    })
+})
+
+
+// Call say("Hi!") to have your computer say hi!
+// This only works on recent versions of Safari
+// and Chrome at the moment.
+function say(text) {
+var msg = new SpeechSynthesisUtterance(text);
+window.speechSynthesis.speak(msg);
+}
+
+
+// task 4
+$('#clicker').click(function(){
+    $('.secret').slideUp('slow',function(){
+
+    })
+});
+
+// task 5
+let pics =['https://freepngimg.com/thumb/cartoon/7-2-cartoon-picture-thumb.png','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTWbmoz_yB5c4VAeDa0DFowrhMJOoPRyDp_dnwxZGTWygbUh5nOzAezyruozhHel571E8&usqp=CAU','https://static.wikia.nocookie.net/spongebob-new-fanon/images/c/cb/SpongeBob.png/revision/latest?cb=20180921062247','https://www.clipartmax.com/png/middle/18-189857_spongebob-png-picture-spongebob-squarepants.png'];
+
+$('#clicker2').click(function(){
+    $('img').attr('src',pics[(parseInt(Math.random()*3))]);
+
+});
+
+
+
+</script>
+    
+</body>
+</html>

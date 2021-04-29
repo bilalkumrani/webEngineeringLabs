@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.cs
+s" integrity="sha384-
+BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        img {
+            max-width: 70%;
+        }
+
+        .image-center {
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="title" class="text-center">Welcome to my website.</h1>
+        <div class="row">
+            <article class="col-sm-8">
+                <p>My website is very important because I have many important
+                    things to say. Here is a picture of a puppy in a cup: </p>
+                <img src="https://cdn.pixabay.com/photo/2015/02/05/12/09/chihuahua-624924_960_720.jpg" alt="">
+                <p>Here are some more thoughts: Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Cum harum labore veritatis, possimus facilis
+                    quas repellat, explicabo, ad commodi ipsum quidem nostrum earum pariatur
+                    fugit! Magni sunt nulla impedit! Facilis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius,
+                    natus qui nostrum libero atque hic distinctio sint facilis nihil possimus
+                    minus tenetur deserunt rerum laboriosam cum quisquam doloremque ducimus
+                    error.</p>
+                <p>Rerum debitis aspernatur, ipsum animi! Quis ullam dolore
+                    blanditiis accusantium eius minus tempore, iure maxime similique vel!
+                    Possimus fugiat reprehenderit autem, recusandae quos laudantium nesciunt
+                    libero suscipit officia rerum, et.</p>
+                <p>Aliquam harum at soluta id esse perspiciatis, nesciunt corporis
+                    nostrum commodi, dolorum, repellat possimus a cumque. Id sed explicabo,
+                    quaerat sit esse facere, voluptatem, odit maxime nesciunt eveniet
+                    assumenda, error!</p>
+                <p>Consequuntur porro, nobis placeat, labore magni aliquam
+                    repellendus autem consequatur hic facere, molestiae dolorum suscipit quos
+                    sint, minima ipsum. Quibusdam voluptatem est hic, corporis. Officiis
+                    delectus, consectetur harum reiciendis perferendis.</p>
+            </article>
+            <aside class="col-sm-4">
+                <h4>I love lists. Here's why.</h4>
+                <ol>
+                    <li>Sometimes they're numbered, and numbers are great.</li>
+                    <li>Sometimes they're not, and that's okay too.</li>
+                    <li>I don't have the attention span to read paragraphs.</li>
+                    <li>Hey look, there's a puppy!</li>
+                </ol>
+            </aside>
+            <button id="clicker">Click me to show a hidden secret!</button>
+            <div id="secret" style="display: none">I am a hidden secret.</div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-4">
+                Red
+                <input class="form-control" type="number" min="0" max="255" step="1" value="255">
+            </div>
+            <div class="col-sm-4">
+                Blue
+                <input class="form-control" type="number" min="0" max="255" step="1" value="255">
+            </div>
+            <div class="col-sm-4">
+                Green
+                <input class="form-control" type="number" min="0" max="255" step="1" value="255">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-
+        16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
+        <script>
+
+            // task 1.1
+            $(document).ready(()=> {
+                console.log("lets get ready to work with Jquery!!!");
+
+                // task 1.2
+                $('a').addClass('image-center');
+
+                // task 1.3
+                $('article').children().last().remove();
+
+                // task 1.4
+                $('#title').css({fontSize:`${Math.random()*100}px`});
+
+                // task 1.5
+                $('ol').append(`<li>Whatever you want</li>`);
+
+                // task 1.6
+                $('aside').empty();
+                $('aside').html(`<p>Sorry the list should not be here so we have removed it from here so now you dont have to worry about it.</p>`);
+
+                // task 1.7
+                $('input').on('click',function(){
+                    let red = $('input:eq(0)').val();
+                    let blue = $('input:eq(1)').val();
+                    let green = $('input:eq(2)').val();
+                    $('body').css({backgroundColor:`rgb(${red},${blue},${green})`});
+                })
+
+                // task 1.8
+
+                $('img').on('click',function(){
+                    this.remove();
+                })
+                
+
+
+                // Task 2
+                let toggle=true;
+                $('#clicker').on('click',function(){
+                    $('#secret').fadeIn('slow',function(){
+                        if(toggle)
+                        {
+                            $('#secret').css({display:'block'});
+                            toggle = false;
+                        }
+                        else{
+                            $('#secret').css({display:'none'});
+                            toggle = true;
+                        }
+                    });
+                })
+
+            });
+
+        </script>
+</body>
+
+</html>
