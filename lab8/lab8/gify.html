@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+<title>gify</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="input-group">
+                    <input type="text" name="" id="search">
+                    <button class="btn-success" id="myBtn">Search</button>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div class="row" id='result'>
+
+
+            
+        </div>
+        
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    
+    <script>
+        
+
+        
+
+        async function searched(search){
+            try {
+                const result = await fetch(`http://api.giphy.com/v1/gifs/search?q=${search}&api_key=dc6zaTOxFJmzC`,{
+                    headers:{
+                        'Access-Control-Allow-Origin': "http://api.giphy.com/v1/gifs/search?q=${search}&api_key=dc6zaTOxFJmzC"
+                    }
+                })
+                return ( result.json())
+                 
+            } catch (error) {
+                throw new Error(error)
+            }
+
+        }
+        
+        
+            
+            
+        function myfunc()
+        {
+            const search = $('#search').val()
+            console.log(search)
+            searched(search).then((res)=>{
+                console.log(res)
+                const  i = `<div class='col-md-4'><img src=${res.data[0].images.original.url} /></div>`;
+                $('#result').append(i);
+                
+            })
+            
+        }
+
+        $('#myBtn').click(myfunc)
+        
+    </script>
+</body>
+</html>

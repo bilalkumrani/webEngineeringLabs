@@ -85,6 +85,39 @@ If server is giving data in response is URI (unified resource identifier)
 
 
 
+::: Generators :::
+
+- It is like iterators and returns single value
+- we dont have that much control on iterators like challo phir ruko phir chalo this we can do in gererators
+- * is used to create a generator
+eg:
+
+function* myGen()
+{
+   yield 1; -> it is a keyword used to return the value 
+   yield 2;
+   yield 'abc';
+   yield 9;
+}
+let gen = myGen()
+console.log(gen)
+console.log(gen.next())
+it will return (value) and (done)->boolean
+
+
+
+function printValue(){
+   for(let i=0 i<5; i++)
+   {
+      console.log(i)
+   }
+}
+
+
+
+
+
+
 
 
 
